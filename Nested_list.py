@@ -1,0 +1,9 @@
+name = []
+score = []
+for i in range(int(input())):
+    print(i)
+    name[i] = input()
+    print(name)
+    score[i] = float(input())
+
+print(name)
