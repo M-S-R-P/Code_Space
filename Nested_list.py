@@ -5,5 +5,6 @@ for i in range(int(input())):
     name[i] = input()
     print(name)
     score[i] = float(input())
+#testing git 
 
 print(name)
