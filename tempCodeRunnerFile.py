@@ -1,9 +1,3 @@
-name=[]
-score=[]
-for _ in range(int(input())):
-    name.append(input())
-    score.append(float(input()))
-
 nstlst = []
 for i in range(len(name)) :
     nstlst.insert(i , [name[i], score[i]]) 
@@ -25,4 +19,4 @@ if len(nstlst) != 1 :
             break
 fnl.sort()
 for i in fnl :
-    print(i)
+    print (fnl[i])
