@@ -1,2 +1,2 @@
 for i in range(1,int(input())):
-    print(str(i)*i)
+    print(int(i*10**i/9))
