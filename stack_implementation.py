@@ -7,28 +7,47 @@ class Stack() :
     # initialising list :
     def __init__(self) :
         self._data = []
-        self._size = 0 
     
     def push(self,e) :
         self._data.append(e)
-        self._size += 1
-    
+
+    def is_empty(self) :
+        return len(self._data) == 0 
+
     def pop(self) :
-        if self._size == 0 :
+        if self.is_empty() :
             raise Empty("Stack is empty")
-        self._size -= 1
         return self._data.pop()
     
     def top(self) :
         return self._data[-1]
 
-# ----------Stack Class Completed-------------
-# ----------Driver Code : --------------------
+    def __len__(self) :
+        return len(self._data)
+    
+
+# --------------------Stack Class Completed--------------------------
+# ----------Driver Code : ( Matching delimiters )--------------------
 s = Stack()
-s.push(123)
-s.push("String")
-for i in range(100,111) :
-    s.push(i)
-print(s.pop())
-print(s._size)
-print(s.top()) 
+lefty = "([{"
+righty = ")]}"
+f = open("test.txt","r") 
+ln = 1
+for i in f :
+    for j in i :
+        if j in lefty :
+            s.push(j)
+            continue
+        if j in righty :
+            if s.is_empty() :
+                print("Line no:",ln,"is incorrect") 
+                break
+            if s.is_empty() :
+                print("Line no:",ln,"is incorrect")
+                break
+            if s.pop() != lefty[righty.index(j)] :
+                print("Line no:",ln,"is incorrect")
+                break
+    else :
+        print("Line no:",ln,"is correct")
+    ln += 1
