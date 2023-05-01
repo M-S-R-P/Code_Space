@@ -1,6 +1,5 @@
-a , b = input().split()
-a = int(a)
-b = int(b)
+a = int(input())
+b = a*3
 count = 0 
 for i in range(a) :
     if i+1 == (a+1)/2 :

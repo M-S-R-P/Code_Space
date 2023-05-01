@@ -11,7 +11,7 @@ nstlst.sort(key = lambda x:x[1], reverse = True)
 
 least = nstlst[-1][1]
 
-while (nstlst[-1][1]) == least :
+while (nstlst[-1][1]) == least and len(nstlst)>1 :
     nstlst.pop()
 
 last = 1
